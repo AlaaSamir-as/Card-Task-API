@@ -25,8 +25,4 @@
     <ProjectReference Include="..\ApplicationLayer\ApplicationLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
