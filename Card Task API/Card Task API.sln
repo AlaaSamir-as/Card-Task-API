@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card Task API", "Card Task 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainLayer", "..\DomainLayer\DomainLayer.csproj", "{52DE1ECC-BFF0-40CF-9F39-88CFC084CFB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfraStructureLayer", "..\InfraStructureLayer\InfraStructureLayer.csproj", "{0D744709-5699-4DE1-BC9A-325F7AE578DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{52DE1ECC-BFF0-40CF-9F39-88CFC084CFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DE1ECC-BFF0-40CF-9F39-88CFC084CFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DE1ECC-BFF0-40CF-9F39-88CFC084CFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D744709-5699-4DE1-BC9A-325F7AE578DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D744709-5699-4DE1-BC9A-325F7AE578DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D744709-5699-4DE1-BC9A-325F7AE578DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D744709-5699-4DE1-BC9A-325F7AE578DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
