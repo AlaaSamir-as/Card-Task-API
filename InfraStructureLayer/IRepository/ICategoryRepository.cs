@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace InfraStructureLayer.IRepository
 {
-    public interface IProductRepository
+    public interface ICategoryRepository
     {
-        public Task<List<Product>> GetProductsAsync(int Page , int PageSize, int CategoryID);
+        public Task<List<Category>> GetCategoriesAsync();
     }
 }

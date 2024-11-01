@@ -15,10 +15,10 @@ namespace Card_Task_API.Controllers
             _IProductService = oIProductService;
         }
         [HttpGet]
-        public async Task<IActionResult> GetProduct(int Page = 1 , int PageSize =10)
+        public async Task<IActionResult> GetProduct(int Page = 1 , int PageSize =10, int CategoryID =0)
         {
             List<Product> products = new List<Product>();
-            products =await _IProductService.GetProductsAsync(Page, PageSize);
+            products =await _IProductService.GetProductsAsync(Page, PageSize,CategoryID);
             return Ok(products);
         }
     }

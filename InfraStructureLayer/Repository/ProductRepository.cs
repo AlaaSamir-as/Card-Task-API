@@ -17,9 +17,15 @@ namespace InfraStructureLayer.Repository
         {
             _context = context;
         }
-        public async Task<List<Product>> GetProductsAsync(int Page, int PageSize)
+        public async Task<List<Product>> GetProductsAsync(int Page, int PageSize, int CategoryID)
         {
-           return await _context.Product.Skip((Page-1)*PageSize).Take(PageSize).ToListAsync();
+            if (CategoryID > 0)
+                return await _context.Product.Where(p => p.CategoryId == CategoryID).Skip((Page - 1) * PageSize).Take(PageSize).ToListAsync();
+            else
+            {
+                var x = await _context.Product.Skip((Page - 1) * PageSize).Take(PageSize).ToListAsync();
+               return x;
+            }
         }
     }
 }

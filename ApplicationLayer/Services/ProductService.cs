@@ -16,9 +16,9 @@ namespace ApplicationLayer.Services
         {
             _IProductRepository = oIProductRepository;
         }
-        public async Task<List<Product>> GetProductsAsync(int Page, int PageSize)
+        public async Task<List<Product>> GetProductsAsync(int Page, int PageSize, int CategoryID)
         {
-            return await _IProductRepository.GetProductsAsync(Page, PageSize);
+            return await _IProductRepository.GetProductsAsync(Page, PageSize, CategoryID);
         }
     }
 }

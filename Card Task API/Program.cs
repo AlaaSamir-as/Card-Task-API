@@ -14,6 +14,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICardItemRepository, CardItemRepository>();
 builder.Services.AddScoped<ICardItemServices, CardItemServices>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryServices, CategoryServices>();
 // Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,7 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UseAuthorization();
 
 app.MapControllers();

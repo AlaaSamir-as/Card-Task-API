@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer.IServices
 {
-    public interface IProductService
+    public interface ICategoryServices
     {
-        public Task<List<Product>> GetProductsAsync(int Page, int PageSize, int CategoryID);
+        public Task<List<Category>> GetCategoriesAsync();
     }
 }
