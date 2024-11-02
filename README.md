@@ -1,7 +1,7 @@
-Ecomerce Poject - Cart Items Api
+Ecomerce Poject - Cart Items Api ///
 Can get all product
-Add new Cart item
-Update Cart item
-Remove Cart item
+and Add new Cart item
+also can Update Cart item
+and Remove Cart item
 
 Can use it api in any platform
