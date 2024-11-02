@@ -19,13 +19,14 @@ namespace InfraStructureLayer.Repository
         }
         public async Task AddCartItem(int ProductID, int Quantity)
         {
-            CartItem CartItem = await _context.CartItem.FindAsync(ProductID);
-            if (CartItem == null) {
-                CartItem = new CartItem() { ProductId =ProductID,Quantity =Quantity };
+            bool CartItemFound = await _context.CartItem.AnyAsync(CT=>CT.ProductId == ProductID);
+            if (!CartItemFound) {
+                CartItem CartItem = new CartItem() { ProductId =ProductID,Quantity =Quantity };
                 _context.CartItem.Add(CartItem);
             }
             else
             {
+                CartItem CartItem = await _context.CartItem.Where(CT => CT.ProductId == ProductID).FirstOrDefaultAsync();
                 CartItem.Quantity += Quantity;
             }
             await _context.SaveChangesAsync();
@@ -33,7 +34,7 @@ namespace InfraStructureLayer.Repository
 
         public async Task<List<CartItem>> GetCartItems()
         {
-            return await _context.CartItem.ToListAsync();
+            return await _context.CartItem.Include(ct=>ct.Product).ToListAsync();
         }
 
         public async Task RemoveCartItem(int ProductID)
